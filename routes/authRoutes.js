@@ -1,9 +1,8 @@
 import {
-   register,
-   verifyEmail,
-   resendOtp,
-   forgotPassword,
-   resetPassword,
+   verifyLoginUser,
+   LoginUser,
+   CreateUser
+
 
 } from "../controllers/authController.js";
 
@@ -13,13 +12,11 @@ const router = express.Router();
 
 
 // Auth Routes
-router.post("/register",register);
+router.post("/login",verifyLoginUser);
 
-router.post("/verify-email", verifyEmail);
-router.post("/resend-otp", resendOtp);
+router.post("/verify", LoginUser);
 
-router.post("/forgot-password", forgotPassword);
-router.post("/reset-password", resetPassword);
+router.post("/register", CreateUser);
 
 
 export default router;

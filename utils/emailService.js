@@ -13,12 +13,12 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const emailTransport = (from, subject, htmlContent) => {
+const emailTransport = (to, subject, htmlContent) => {
     const mailOptions = {
-        to: process.env.EMAIL_USER,
-        from,
+        from: process.env.EMAIL_USER,
+        to,
         subject,
-        html: htmlContent 
+        html: htmlContent
     };
 
     return new Promise((resolve, reject) => {

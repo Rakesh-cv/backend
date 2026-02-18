@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Home Page!');
 });
 
-app.use('/api/auth', routes);
+app.use('/api', routes);
 
 app.use(routes);
 
